@@ -2,6 +2,7 @@ public class Carte {
     private Monstre monstre;
     private boolean estVisible = false;
     private double valeurMemorielle = 0.0;
+    private int nbRetournements = 0;
 
 
     public Carte(Monstre monstre) {
@@ -14,6 +15,12 @@ public class Carte {
 
     public void retourner() {
         estVisible = !estVisible;
+        if (estVisible) {
+            nbRetournements++;
+            double valeurAjoutee = 0.5 + (0.1 * nbRetournements); // Valeur subjective
+            // plus on voit la carte, plus on s'en souvient 
+            setValeurMemorielle(this.valeurMemorielle + valeurAjoutee);
+        }
     }
     public boolean estVisible() {
         return estVisible;
