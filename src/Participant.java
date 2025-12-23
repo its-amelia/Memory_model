@@ -1,13 +1,9 @@
 public class Participant {
-    private String categorie; // jeune vs vieux
-    private double valeurMemorisation;
+    private String categorie ; // jeune vs vieux
 
-    public Participant(String categorie, double valeurMemorisation) {
+    public Participant(String categorie ) {
         this.categorie = categorie;
-        this.valeurMemorisation = valeurMemorisation;
-    }
-
     
-
+    }
 
 }
