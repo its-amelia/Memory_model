@@ -11,7 +11,7 @@ public class Grille {
 
     public void Disposition() {
         // Ligne 1
-        grille[0][0] = new Carte(new Monstre("Rouge", "i"));
+        grille[0][0] = new Carte(new Monstre("Violet", "i"));
         grille[0][1] = new Carte(new Monstre("Vert", "h"));
         grille[0][2] = new Carte(new Monstre("Violet", "b"));
         grille[0][3] = new Carte(new Monstre("Rouge", "f"));
