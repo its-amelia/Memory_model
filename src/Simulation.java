@@ -11,21 +11,22 @@ public class Simulation {
 
 
         grille.Disposition();
+while (pairesTrouvees < 9) { 
+    tours++;
 
-        while (pairesTrouvees < 9) { 
-            tours++;
-            
-            // Calcul du temps selon la catégorie 
-            double tempsAction = (p.getCategorie().equals("jeune")) ? 3.0 : 6.0;
-            tempsTotal += tempsAction;
-
+    for (int action = 0; action < 2; action++) {
+        double tempsAction;
         
-            if (Math.random() > p.getOubli()) {
-                pairesTrouvees++;
-            } else {
-                erreurs++;
-            }
+       
+        if (p.getCategorie().equals("jeune")) {
+            tempsAction = 3.0; 
+        } else {
+            tempsAction = 6.0; 
         }
+        
+        tempsTotal += tempsAction;
+    }
+}
 
         System.out.println("Resultats pour " + p.getCategorie() + ":");
         System.out.println("- Tours: " + tours);
@@ -39,11 +40,9 @@ public class Simulation {
         Grille g = new Grille(new Carte[3][6]);
 
         System.out.println("Lancement de l'etude (N=20)...\n");
-        for(int i=0; i<10; i++) {
+        for (int i = 0; i < 10; i++) {
             executerSimulation(jeune, g);
             executerSimulation(vieux, g);
         }
     }
 }
-    
-
