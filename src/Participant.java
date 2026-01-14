@@ -1,5 +1,5 @@
 public class Participant {
-    private String categorie ; // jeune vs vieux
+    private String categorie ; // jeune vs agé
     private double oubli; //valeur correpondant au pourcentage d'oubli d'une carte par tour
 
 
@@ -7,10 +7,10 @@ public class Participant {
     public Participant(String categorie ) {
         this.categorie = categorie;
         if (categorie.equals("jeune")) {
-            this.oubli = 0.1; //subjectif
+            this.oubli = 0.1; // oubli faible
             
-        } else if (categorie.equals("vieux")) {
-            this.oubli = 0.3; //subjectif
+        } else if (categorie.equals("âgé")) {
+            this.oubli = 0.3; //oubli fort
            
         } else {
             throw new IllegalArgumentException();

@@ -35,25 +35,7 @@ public class Grille {
         grille[2][5] = new Carte(new Monstre("Violet", "g"));
 
     }
-    /*
-     * public void afficherGrille (){
-     * for (int i = 0; i < 3; i++) {
-     * for (int j = 0; j < 6; j++) {
-     * Carte carte = grille[i][j];
-     * if (carte.estVisible()) {
-     * System.out.print("[" + carte.getMonstre().getCouleur().charAt(0) +
-     * carte.getMonstre().getLettre() + "] ");
-     * } else {
-     * System.out.print("[XX] ");
-     * 
-     * }
-     * System.out.println();
-     * 
-     * }
-     * }
-     * 
-     * }
-     */
+   
 
     void memorisation() {
         for (int i = 0; i < 3; i++) {
