@@ -1,18 +1,57 @@
-## Getting Started
+# Memory Model - Simulation du Jeu de Memory
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Description
 
-## Folder Structure
+Simulation d'un jeu de memory avec modèle cognitif basé sur la trace mnésique et les différences liées à l'âge.
 
-The workspace contains two folders by default, where:
+## Mécaniques
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+### Phase 1 : Mémorisation Initiale
+- **Jeunes** : mémorisent 2 paires
+- **Âgés** : mémorisent 1 paire
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+### Phase 2 : Jeu
+- Retourner 2 cartes par tour
+- Paire trouvée = cartes restent visibles
+- Mauvaise paire = cartes retournées face cachée
+- Fin du jeu : 9 paires trouvées
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## Dégradation Mémoire
 
-## Dependency Management
+À chaque tour, la valeur mémorielle diminue :
+- **Jeunes** : -0.1 par tour
+- **Âgés** : -0.3 par tour
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Probabilité de Succès
+
+```
+traceMnesique = (valeur_carte1 + valeur_carte2) / 2
+succès = traceMnesique × p_rappel
+```
+
+- **Jeunes** : p_rappel = 0.95
+- **Âgés** : p_rappel = 0.45
+
+## Structure
+
+```
+src/
+├── Carte.java
+├── Monstre.java
+├── Grille.java
+├── Participant.java
+└── Simulation.java
+```
+
+## Utilisation
+
+```bash
+javac src/*.java
+java -cp src Simulation
+```
+
+Génère un fichier CSV avec 1000 simulations par groupe.
+
+Teyssandier Jeanne, Lama Adodo Joyce, Mahdjoub Amélia
+L3 MIASHS
+
