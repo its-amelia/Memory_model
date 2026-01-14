@@ -17,7 +17,7 @@ public class Carte {
         estVisible = !estVisible;
         if (estVisible) {
             nbRetournements++;
-            double valeurAjoutee = 0.5 + (0.1 * nbRetournements); // Valeur subjective
+            double valeurAjoutee = 0.5 + (0.1 * nbRetournements); 
             // plus on voit la carte, plus on s'en souvient 
             setValeurMemorielle(this.valeurMemorielle + valeurAjoutee);
         }

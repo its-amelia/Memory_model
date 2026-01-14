@@ -10,8 +10,8 @@ public class Simulation {
         int pairesTrouvees = 0;
 
         grille.Disposition();
-        Carte[] cartes = new Carte[18];
-        boolean[] estTrouvee = new boolean[18];
+        Carte[] cartes = new Carte[18]; // liste de toutes les cartes
+        boolean[] estTrouvee = new boolean[18]; // suivi des cartes déjà trouvées
 
         int index = 0;
         for (int i = 0; i < 3; i++) {
@@ -93,7 +93,7 @@ public class Simulation {
                 totalErrJ += res[1];
                 writer.println((i + 15) + ",jeune,simulation," + (int)res[0] + "," + (int)res[1]);
 
-                // Simulation âgés
+                // Simulation âgé
                 executerSimulation(v, g, res);
                 totalToursV += res[0];
                 totalErrV += res[1];
